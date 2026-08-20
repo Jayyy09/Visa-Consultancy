@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7d27b"/>
+      <stop offset="50%" stop-color="#d4a94f"/>
+      <stop offset="100%" stop-color="#f2ca70"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main navy circle -->
+  <circle cx="250" cy="250" r="235" fill="#0b2342"/>
+
+  <!-- Outer gold ring -->
+  <circle
+    cx="250"
+    cy="250"
+    r="210"
+    fill="none"
+    stroke="url(#gold)"
+    stroke-width="7"
+  />
+
+  <!-- Star -->
+  <polygon
+    points="250,105 285,205 390,210 307,270 335,375 250,315 165,375 193,270 110,210 215,205"
+    fill="url(#gold)"
+  />
+
+  <!-- KVC -->
+  <text
+    x="250"
+    y="285"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="105"
+    font-weight="bold"
+    fill="#ffffff"
+    letter-spacing="3"
+  >KVC</text>
+
+  <!-- VISA -->
+  <text
+    x="250"
+    y="350"
+    text-anchor="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="28"
+    letter-spacing="9"
+    fill="#f1c96c"
+  >VISA</text>
+
+  <!-- CONSULTANCY -->
+  <text
+    x="250"
+    y="390"
+    text-anchor="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="25"
+    letter-spacing="5"
+    fill="#f1c96c"
+  >CONSULTANCY</text>
+</svg>
