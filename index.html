@@ -8,6 +8,87 @@
   <title>Krishna Visa Consultancy Pvt Ltd | Visa & Immigration Support</title>
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .visa-enquiry-form {
+      max-width: 900px;
+      margin: 2.5rem auto 0;
+      padding: 2rem;
+      border: 1px solid rgba(198, 153, 64, 0.28);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 18px 50px rgba(11, 31, 58, 0.08);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .form-field-full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      font-weight: 600;
+      color: #0b1f3a;
+      font-size: 0.95rem;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.9rem 1rem;
+      border: 1px solid rgba(11, 31, 58, 0.16);
+      border-radius: 10px;
+      background: #fff;
+      color: #0b1f3a;
+      font: inherit;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: #c99a3e;
+      box-shadow: 0 0 0 3px rgba(201, 154, 62, 0.12);
+    }
+
+    .form-field textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .form-submit {
+      margin-top: 1.3rem;
+      border: 0;
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+      .visa-enquiry-form {
+        padding: 1.25rem;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-field-full {
+        grid-column: auto;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -306,7 +387,61 @@
           <p>Tell us where you want to go and what you need help with.</p>
         </div>
 
-        <div class="contact-actions reveal delay-1">
+        <!-- Netlify Forms enquiry form -->
+        <form
+          name="visa-enquiry"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="visa-enquiry-form reveal delay-1"
+        >
+          <input type="hidden" name="form-name" value="visa-enquiry">
+          <input type="hidden" name="subject" data-remove-prefix value="New Visa Enquiry - %{formName}">
+
+          <p hidden>
+            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+          </p>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="full-name">Full Name *</label>
+              <input id="full-name" type="text" name="full-name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-field">
+              <label for="phone">Phone Number *</label>
+              <input id="phone" type="tel" name="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email Address *</label>
+              <input id="email" type="email" name="email" placeholder="Enter your email address" required>
+            </div>
+
+            <div class="form-field">
+              <label for="service">Visa / Service *</label>
+              <select id="service" name="service" required>
+                <option value="" selected disabled>Select a service</option>
+                <option value="Poland Work Visa">Poland Work Visa</option>
+                <option value="Poland Study Visa">Poland Study Visa</option>
+                <option value="USA Visa">USA Visa</option>
+                <option value="UK Visa">UK Visa</option>
+                <option value="Ireland Study Visa">Ireland Study Visa</option>
+                <option value="Travel & Immigration">Travel & Immigration</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-field form-field-full">
+              <label for="message">Message / Requirements *</label>
+              <textarea id="message" name="message" rows="6" placeholder="Tell us about your visa requirement..." required></textarea>
+            </div>
+          </div>
+
+          <button class="btn btn-gold form-submit" type="submit">Send Enquiry <span>→</span></button>
+        </form>
+
+        <div class="contact-actions reveal delay-2">
           <a class="contact-action whatsapp" href="https://wa.me/916305379489?text=Hello%20Krishna%20Visa%20Consultancy%2C%20I%20would%20like%20a%20visa%20consultation." target="_blank" rel="noopener">
             <span class="icon whatsapp-icon">◔</span><span><b>WhatsApp</b><small>Chat with us</small></span>
           </a>
@@ -316,7 +451,7 @@
           <a class="contact-action" href="mailto:sairamchowdary992@gmail.com">
             <span class="icon">✉</span><span><b>Email</b><small>sairamchowdary992@gmail.com</small></span>
           </a>
-          <a class="contact-action" href="https://www.google.com/maps/place/H.No-202,+4-1424,+Prem+Nagar,+Hafeezpet,+Hyderabad,+Telangana+500049/@17.4820572,78.3515218,20.73z/data=!4m14!1m7!3m6!1s0x3bcb9300798c17e9:0x4e43bde1f30da57f!2sLB+Residency!8m2!3d17.4819077!4d78.3518153!16s%2Fg%2F11msrxzy84!3m5!1s0x3bcb9244e6732a21:0x901842a8186170dc!8m2!3d17.4819102!4d78.3518327!16s%2Fg%2F11nhxpdn1m?entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
+          <a class="contact-action" href="https://www.google.com/maps/place/H.No-202,+4-1424,+Prem+Nagar,+Hafeezpet,+Hyderabad,+Telangana+500049/@17.4820572,78.3515218,20.73z/data=!4m14!1m7!3m6!1s0x3bcb9300798e17e9:0x4e43bde1f30da57f!2sLB+Residency!8m2!3d17.4819077!4d78.3518153!16s%2Fg%2F11msrxzy84!3m5!1s0x3bcb9244e6732a21:0x901842a8186170dc!2sLB+Residency!8m2!3d17.4819102!4d78.3518327!16s%2Fg%2F11nhxpdn1m?entry=ttu" target="_blank" rel="noopener">
             <span class="icon">⌖</span><span><b>Visit Us</b><small>New Hafeezpet, Hyderabad</small></span>
           </a>
         </div>
